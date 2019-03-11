@@ -3,6 +3,17 @@
     text-align: center;
 }
 
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.card-header {}
+
+body {
+    background: #388A8E;
+}
+
 h2 {
     color: white;
 }
@@ -16,4 +27,8 @@ form {
 .col-6 {
     padding: 20px;
     text-align: center;
+}
+
+#container {
+    background: white;
 }
