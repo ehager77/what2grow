@@ -49,5 +49,5 @@ function setPos(position) {
     text("Current position: " + nf(lat, 2, 2) + " " + nf(lng, 2, 2), 10, height / 2)
 
 }
-=======
+
 //js for animations or anything with p5
