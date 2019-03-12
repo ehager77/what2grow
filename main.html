@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
 
     <!-- link to our scripts-->
@@ -20,7 +21,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Button icon link-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
     <title>what2grow</title>
 </head>
 
@@ -31,13 +33,10 @@
     <div class="jumbotron ">
         <h2 class="display-4">Enter the Crop you Wish to Grow</h2>
         <form>
-            <div class="ui-widget">
+            <div class="input-group">
                 <input id="plants" type="plant-input" class="form-control" placeholder="e.g. tomato, cabbage, onion">
-
-                <button class="btn btn-default" type="submit">
-                        <i class="fa fa-search"></i>
-                </button>
-
+                <span id="fa-search-box" class="input-group-add-on"><button class="btn btn-default" type="submit"><i
+                            class="fa fa-search"></i></button></span>
             </div>
         </form>
     </div>
@@ -51,9 +50,71 @@
                 <h4>Current Suitability:</h4>
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col">
                 <h4> First Suitable Month: </h4>
+            </div>
+            <div id="first-month" class="col">
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Forecasted Temprature
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4 data-col">
+                                <span>
+                                    <div class="row temp-row justify-content-center">
+                                        20
+                                    </div>
+                                    <div class="row metric-row justify-content-center">
+                                        MIN
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="col-4">
+                                <span>
+                                    <div class="row temp-row justify-content-center">
+                                        20
+                                    </div>
+                                    <div class="row metric-row justify-content-center">
+                                        MEAN
+                                    </div>
+                                </span>
+
+                            </div>
+                            <div class="col-4">
+                                <span>
+                                    <div class="row temp-row justify-content-center">
+                                        20
+                                    </div>
+                                    <div class="row metric-row justify-content-center">
+                                        MIN
+                                    </div>
+                                </span>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h4> Most Suitable Month: </h4>
+            </div>
+            <div id="first-month" class="col">
+
             </div>
         </div>
         <div class="row">
@@ -63,21 +124,56 @@
                         Forecasted Temprature
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <div class="row">
+                            <div class="col-4 data-col">
+                                <span>
+                                    <div class="row temp-row justify-content-center">
+                                        20
+                                    </div>
+                                    <div class="row metric-row justify-content-center">
+                                        MIN
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="col-4">
+                                <span>
+                                    <div class="row temp-row justify-content-center">
+                                        20
+                                    </div>
+                                    <div class="row metric-row justify-content-center">
+                                        MEAN
+                                    </div>
+                                </span>
+
+                            </div>
+                            <div class="col-4">
+                                <span>
+                                    <div class="row temp-row justify-content-center">
+                                        20
+                                    </div>
+                                    <div class="row metric-row justify-content-center">
+                                        MIN
+                                    </div>
+                                </span>
+
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
             </div>
 
         </div>
-
+        <br>
+        <br>
         <div class="row">
             <div class="col-6 col-md-4">
                 <div class="card">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +181,8 @@
                 <div class="card">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
                     </div>
                 </div>
             </div>
@@ -93,7 +190,8 @@
                 <div class="card">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
                     </div>
                 </div>
             </div>
@@ -112,8 +210,10 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
