@@ -9,21 +9,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
-    <script src="sketch.js"></script>
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="main.css">
-    </head>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <script type="text/javascript" src="assets/javascript/sketch.js"></script>
+
     <title>what2grow</title>
 </head>
 
 <body>
+
+    <div id="canvasContainer"></div>
 
     <div class="jumbotron ">
         <h2 class="display-4">Enter the Crop you Wish to Grow</h2>
         <form>
             <div class="form">
                 <input type="plant-input" class="form-control" id="plants" placeholder="e.g. tomato, cabbage, onion">
+                <span class="inout-group-btn">
+                <button class="btn btn-default" type="submit">
+                        <i class="fa fa-search"></i>
+                </button>
+            </span>
             </div>
         </form>
     </div>

@@ -38,3 +38,46 @@ form {
 #container {
     background: white;
 }
+
+.g-signin2 {
+    margin-right: 30%;
+    margin-left: 45%;
+}
+
+.fade {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.display-4 {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#btn {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-delay: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
