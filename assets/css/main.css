@@ -37,6 +37,8 @@ form {
 
 #container {
     background: white;
+
+
 }
 
 .g-signin2 {
@@ -80,4 +82,5 @@ form {
     100% {
         opacity: 1;
     }
+
 }
