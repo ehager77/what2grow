@@ -30,15 +30,24 @@ form {
     margin-left: 30%;
 }
 
+.col {
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
 .col-6 {
     padding: 20px;
     text-align: center;
 }
 
+input {
+    flex-grow: 2;
+    border: none;
+}
+
 #container {
     background: white;
-
-
 }
 
 .g-signin2 {
@@ -75,6 +84,16 @@ form {
     animation-fill-mode: forwards;
 }
 
+.ui-widget {
+    opacity: 0;
+    animation-name: fadeInOpacity;
+    animation-delay: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
 @keyframes fadeInOpacity {
     0% {
         opacity: 0;
@@ -82,5 +101,4 @@ form {
     100% {
         opacity: 1;
     }
-
 }
