@@ -8,10 +8,16 @@ h1 {
     color: white;
 }
 
-.card-header {}
-
-body {
+.card-header {
     background: #388A8E;
+    color: white;
+}
+
+body {}
+
+.container-full-bg {
+    background: #388A8E;
+    height: 100vh;
 }
 
 h2 {
