@@ -10,10 +10,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
 
-
+    <!-- link to our scripts-->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <script type="text/javascript" src="assets/javascript/sketch.js"></script>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Button icon link-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>what2grow</title>
 </head>
 
@@ -24,30 +31,36 @@
     <div class="jumbotron ">
         <h2 class="display-4">Enter the Crop you Wish to Grow</h2>
         <form>
-            <div class="form">
-                <input type="plant-input" class="form-control" id="plants" placeholder="e.g. tomato, cabbage, onion">
-                <span class="inout-group-btn">
+            <div class="ui-widget">
+                <input id="plants" type="plant-input" class="form-control" placeholder="e.g. tomato, cabbage, onion">
+
                 <button class="btn btn-default" type="submit">
                         <i class="fa fa-search"></i>
                 </button>
-            </span>
+
             </div>
         </form>
     </div>
     <div id="container">
+
         <div class="row">
             <div class="col-6">
                 <h4>Crop Selected:</h4>
             </div>
             <div class="col-6">
-                <h4>Sutability:</h4>
+                <h4>Current Suitability:</h4>
             </div>
         </div>
         <div class="row">
-            <div class="col-6 col-md-4">
+            <div class="col">
+                <h4> First Suitable Month: </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        Featured
+                        Forecasted Temprature
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Special title treatment</h5>
@@ -56,30 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Featured
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Featured
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="row">
@@ -112,8 +102,16 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="sketch.js"></script>
+    <script type="text/javascript" src="assets/javascript/sketch.js"></script>
+
+    <!--autocomplete -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
