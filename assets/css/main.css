@@ -1,3 +1,7 @@
+body{
+    
+}
+
 .card-header{
     font-size: 20px;
 }
@@ -9,6 +13,10 @@
 .jumbotron {
     background-color: #388A8E;
     text-align: center;
+}
+
+.display-4{
+    font-size: 30px;
 }
 
 input::-webkit-input-placeholder {
