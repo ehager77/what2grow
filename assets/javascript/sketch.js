@@ -52,19 +52,18 @@ function setPos(position) {
 //js for animations or anything with p5
 
 //auto complete test
-/*
 $(function() {
     var availableTags = [
         "Corn",
         "Potato ",
         "Tomato",
         "Carrot",
-        "Nuts",
-        "oranges",
+        "Cabbage",
+        "Onion",
+
 
     ];
     $("#plants").autocomplete({
         source: availableTags
     });
 });
-*/
