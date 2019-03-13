@@ -4,6 +4,11 @@
 body {}
 >>>>>>> ccee725d9d3194c0144849dc99b1067f63bd8580
 
+#days-to-harvest{
+    font-size: 60px;
+    font-weight: bold;
+}
+
 .card-header {
     font-size: 20px;
 }
