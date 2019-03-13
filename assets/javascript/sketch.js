@@ -6,6 +6,8 @@
 }*/
 
 //google sign in info 
+
+/*
 function onSuccess(googleUser) {
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
 }
@@ -39,6 +41,7 @@ app.signIn = function() {
 /**
  * Trigger sign-out using Google Sign-In
  */
+/*
 app.signOut = function() {
     // Get `GoogleAuth` instance
     var auth2 = gapi.auth2.getAuthInstance();
@@ -53,6 +56,7 @@ app.signOut = function() {
  * @param  {GoogleUser} googleUser GoogleUser object obtained upon
  *                                 successful authentication
  */
+/*
 var changeProfile = function(googleUser) {
     // See if `GoogleUser` object is obtained
     // If not, the user is signed out
@@ -99,7 +103,7 @@ gapi.load('auth2', function() {
         }
     });
 });
-
+*/
 //geolocation with p5
 
 // must be in HTTPS
