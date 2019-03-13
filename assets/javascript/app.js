@@ -1,6 +1,3 @@
-
-
-
 var token = "";
 //the array will hold all weather API data returned via multiple calls
 var arrAll = [];
@@ -48,45 +45,46 @@ var root = firebase.database();
 var vegetables = root.ref().child('Vegetables')
 
 var veggies = [{
-    name: "Tomato",
-    minTemp: 20,
-    maxTemp: 35,
-    minPh: 5.5,
-    maxPh: 6.5,
-    daysToHarvest: 80,
-    plantingMethod: {
-        seed: true,
-        cutting: true,
-        transplant: true
+        name: "Tomato",
+        minTemp: 20,
+        maxTemp: 35,
+        minPh: 5.5,
+        maxPh: 6.5,
+        daysToHarvest: 80,
+        plantingMethod: {
+            seed: true,
+            cutting: true,
+            transplant: true
+        },
+        plantingDensity: {
+            greenhouse: 4,
+            field: 2
+        }
     },
-    plantingDensity: {
-        greenhouse: 4,
-        field: 2
+    {
+        name: "Potato",
+        temp: "something else"
+    },
+    {
+        name: "Carrots",
+        temp: "something"
+    },
+    {
+        name: "Cabbage",
+        temp: "something"
+    },
+    {
+        name: "Corn",
+        temp: "something"
     }
-},
-{
-    name: "Potato",
-    temp: "something else"
-},
-{
-    name: "Carrots",
-    temp: "something"
-},
-{
-    name: "Cabbage",
-    temp: "something"
-},
-{
-    name: "Corn",
-    temp: "something"
-}]
+]
 
 // for (var i = 0; i < veggies.length; i++) {
 //     vegetables.child(veggies[i].name).set(veggies[i]);
 // }
 
 for (var i = 0; i < veggies.length; i++) {
-    root.ref('Vegetables/' + veggies[i].name).once("value", function (snapshot) {
+    root.ref('Vegetables/' + veggies[i].name).once("value", function(snapshot) {
         console.log(snapshot.val())
     })
 }
@@ -299,7 +297,7 @@ for (var i = 0; i < veggies.length; i++) {
 
 // <--------------------------------------------------------------------------- Halina (Line 300 onward) ------------------------------------------------------------------>
 
-$.ajaxPrefilter(function (options) {
+$.ajaxPrefilter(function(options) {
     if (options.crossDomain && $.support.cors) {
         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
@@ -314,7 +312,7 @@ $.ajax({
         'Access-Control-Allow-Origin': '*'
     },
     data: "grant_type=client_credentials"
-}).then(function (response) {
+}).then(function(response) {
     token = response.access_token;
     console.log(token);
 
@@ -331,7 +329,7 @@ $.ajax({
         startMonth = currMoment.month();
 
 
-        console.log("startMonth " + currMoment.month()); 
+        console.log("startMonth " + currMoment.month());
         var futureMonth = moment().add(i, 'months').format('MM');
 
         //build the month range for the weather api and
@@ -350,7 +348,7 @@ $.ajax({
             headers: {
                 "Authorization": "Bearer " + token
             }
-        }).then(function (response) {
+        }).then(function(response) {
             console.log(response);
 
             for (var j = 0; j < 10; j++) {
@@ -372,21 +370,21 @@ $.ajax({
             console.log(arrAll); //the array is populated
 
             //call the function separating the array which holds all the data inside 'then' clause because the ajax call is async
-            arrMonthly01.length=0;
-            arrMonthly02.length=0;
-            arrMonthly03.length=0;
-            arrMonthly04.length=0;
+            arrMonthly01.length = 0;
+            arrMonthly02.length = 0;
+            arrMonthly03.length = 0;
+            arrMonthly04.length = 0;
             /*console.log("01 " + arrMonthly01);
             console.log("02 " + arrMonthly02);
             console.log("03 " + arrMonthly03);
             console.log("04 " + arrMonthly04); */
-            
+
             separateArray(arrAll);
 
             console.log(arrMonthly01);
             console.log(arrMonthly02);
             console.log(arrMonthly03);
-            console.log(arrMonthly04);  
+            console.log(arrMonthly04);
 
             //call the function to check if there was a day in the month when a min temperature was below the temperature requirement for the plant
             //should we use a count to allow this function to run only once
@@ -397,8 +395,8 @@ $.ajax({
         });
         console.log(arrAll); //the array will be empty because of the asynch          
 
-    }    
-  
+    }
+
 });
 
 //arrAll has all 4 months average daily weather data needed and now is the time to analyze it
@@ -412,16 +410,13 @@ function separateArray(arr) {
         if (arr[i].day.substring(0, 2) == fourMonths[0] && arrMonthly01.length < 10) {
             //console.log("0 day " + [i] + " " +  arr[i].day.substring(0, 2))
             arrMonthly01.push(arr[i])
-        }
-        else if (arr[i].day.substring(0, 2) == fourMonths[1] && arrMonthly02.length < 10) {
+        } else if (arr[i].day.substring(0, 2) == fourMonths[1] && arrMonthly02.length < 10) {
             //console.log("1 day " + [i] + " " +  arr[i].day.substring(0, 2))
             arrMonthly02.push(arr[i])
-        }
-        else if (arr[i].day.substring(0, 2) == fourMonths[2] && arrMonthly03.length < 10) {
+        } else if (arr[i].day.substring(0, 2) == fourMonths[2] && arrMonthly03.length < 10) {
             //console.log("2 day " + [i] + " " +  arr[i].day.substring(0, 2))
             arrMonthly03.push(arr[i])
-        }
-        else if (arr[i].day.substring(0, 2) == fourMonths[3] && arrMonthly04.length < 10) {
+        } else if (arr[i].day.substring(0, 2) == fourMonths[3] && arrMonthly04.length < 10) {
             //console.log("3 day " + [i] + " " +  arr[i].day.substring(0, 2))
             arrMonthly04.push(arr[i])
         }
@@ -431,10 +426,10 @@ function separateArray(arr) {
 
 //this function returns true if daily min temeratures within a month were higher than the min required temperature for a plan 
 //returns false otherwise
-function isAllowedToPlantMinTemp (arr, minReqTemp) {
+function isAllowedToPlantMinTemp(arr, minReqTemp) {
 
     for (var i = 0; i <= arr.length; i++) {
-        if (arr[i].minTemp <=  minReqTemp) {
+        if (arr[i].minTemp <= minReqTemp) {
             return false;
         }
 
@@ -447,12 +442,12 @@ function isAllowedToPlantMinTemp (arr, minReqTemp) {
 
 
 
-        //read the plant data from the firebase
+//read the plant data from the firebase
 
-        //check if the min temperature for each month data is not higher than the min tempearture required by a plant
-        //for this run 4 loops for each month and check minTemp property for comparison
+//check if the min temperature for each month data is not higher than the min tempearture required by a plant
+//for this run 4 loops for each month and check minTemp property for comparison
 
 
-        //accumulate average for meanTemp.average for each month?
+//accumulate average for meanTemp.average for each month?
 
-        //accumulate average for maxTemp.average for each month?
+//accumulate average for maxTemp.average for each month?

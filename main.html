@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
 
     <!-- link to our scripts-->
@@ -21,8 +20,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Button icon link-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>what2grow</title>
 </head>
 
@@ -128,7 +126,7 @@
                         <div class="row">
                             <div class="col-4 data-col">
                                 <span>
-                                    <div class="row temp-row justify-content-center">
+                                    <div id = "min-temp-best" class="row temp-row justify-content-center">
                                         20
                                     </div>
                                     <div class="row metric-row justify-content-center">
@@ -138,7 +136,7 @@
                             </div>
                             <div class="col-4">
                                 <span>
-                                    <div class="row temp-row justify-content-center">
+                                    <div id = "mean-temp-best" class="row temp-row justify-content-center">
                                         25
                                     </div>
                                     <div class="row metric-row justify-content-center">
@@ -149,7 +147,7 @@
                             </div>
                             <div class="col-4">
                                 <span>
-                                    <div class="row temp-row justify-content-center">
+                                    <div id = "max-temp-best" class="row temp-row justify-content-center">
                                         30
                                     </div>
                                     <div class="row metric-row justify-content-center">
@@ -173,7 +171,35 @@
                 <div class="col-6 col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            Featured
+                            Propagation Methods
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    Seeds: 
+                                </div>
+                                <div class="col-6">
+                                    True
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-6">
+                                        Seeds: 
+                                    </div>
+                                    <div class="col-6">
+                                        True
+                                    </div>
+                                </div>
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Water Needs
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Special title treatment</h5>
@@ -185,19 +211,7 @@
                 <div class="col-6 col-md-4">
                     <div class="card">
                         <div class="card-header">
-                            Featured
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            Featured
+                            Days to First Harvest
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Special title treatment</h5>
@@ -221,10 +235,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
