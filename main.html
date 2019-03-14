@@ -7,56 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- link to our scripts-->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <script type="text/javascript" src="assets/javascript/sketch.js"></script>
+    <!-- <script type="text/javascript" src="assets/javascript/sketch.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
     <!-- Button icon link-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>what2grow</title>
 </head>
 
 <body>
-
-    <div id="canvasContainer"></div>
 
     <div class="jumbotron ">
         <h2 class="display-4">Enter the Crop you Wish to Grow</h2>
         <form>
             <div class="input-group">
                 <input id="plants" type="plant-input" class="form-control" placeholder="e.g. tomato, cabbage, onion">
-                <span id="fa-search-box" class="input-group-add-on"><button class="btn btn-default" type="submit"><i
-                            class="fa fa-search"></i></button></span>
+                <span id="fa-search-box" class="input-group-add-on"><button class="btn btn-default" id="plant-button"
+                        type="submit"><i class="fa fa-search"></i></button></span>
             </div>
         </form>
+        <br>
+        <div>
+            <form id="btn">
+                <button type="submit" id="location-button">
+                    <span class="location__text">Get location</span>
+                </button>
+            </form>
+        </div>
     </div>
     <div id="container">
 
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-6">
-                <h4>Crop Selected:<span id = "user-crop"></span></h4>
+                <h4>Crop Selected: <span id="user-crop"></span></h4>
             </div>
-        </div>
-        <div class="row">
 
             <div class="col-6">
-                <h4>Current Suitability:<span id = "suitability-status"></span></h4>
+                <h4>Current Suitability: <span id="suitability-status"></span></h4>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col">
-                <h4> First Suitable Month: <span id ="first-month"></span></h4>
+                <h4> First Suitable Month: <span id="first-month"></span></h4>
             </div>
         </div>
         <br>
@@ -64,27 +63,25 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        Forecasted Temprature
+                        Forecasted Temperature
                     </div>
                     <div class="col">
 
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4 data-col">
+                            <div class="col-lg-4 col-md-12 col-xs-12">
                                 <span>
                                     <div id="min-temp-first" class="row temp-row justify-content-center">
-                                        20
                                     </div>
                                     <div class="row metric-row justify-content-center">
                                         MIN
                                     </div>
                                 </span>
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4 col-md-12 col-xs-12">
                                 <span>
                                     <div id="mean-temp-first" class="row temp-row justify-content-center">
-                                        25
                                     </div>
                                     <div class="row metric-row justify-content-center">
                                         MEAN
@@ -92,10 +89,9 @@
                                 </span>
 
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4 col-md-12 col-xs-12">
                                 <span>
                                     <div id="max-temp-first" class="row temp-row justify-content-center">
-                                        30
                                     </div>
                                     <div class="row metric-row justify-content-center">
                                         MAX
@@ -111,10 +107,7 @@
         <br>
         <div class="row">
             <div class="col">
-                <h4> Most Suitable Month: </h4>
-            </div>
-            <div id="best-month" class="col">
-
+                <h4> Most Suitable Month: <span id="best-month"></span></h4>
             </div>
         </div>
         <br>
@@ -126,20 +119,19 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-lg-4 col-md-12 col-xs-12">
                                 <span>
                                     <div id="min-temp-best" class="row temp-row justify-content-center">
-                                        20
+
                                     </div>
                                     <div class="row metric-row justify-content-center">
                                         MIN
                                     </div>
                                 </span>
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4 col-md-12 col-xs-12">
                                 <span>
                                     <div id="mean-temp-best" class="row temp-row justify-content-center">
-                                        25
                                     </div>
                                     <div class="row metric-row justify-content-center">
                                         MEAN
@@ -147,10 +139,9 @@
                                 </span>
 
                             </div>
-                            <div class="col-4">
+                            <div class="col-lg-4 col-md-12 col-xs-12">
                                 <span>
                                     <div id="max-temp-best" class="row temp-row justify-content-center">
-                                        30
                                     </div>
                                     <div class="row metric-row justify-content-center">
                                         MAX
@@ -167,21 +158,24 @@
 
         </div>
         <br>
+        <div class="row justify-content-center">
+            <h4>More Useful Information</h4>
+        </div>
         <br>
         <div class="container">
             <div class="row">
-                <div class="col-6 col-md-12">
+                <div class="col-lg-4 col-md-12 col-xs-12">
                     <div class="card">
                         <div class="card-header">
                             Propagation Methods
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div id="direct-seed" class="col-6 text-right">
+                                <div class="col-6 text-right">
                                     Direct Seed:
                                 </div>
-                                <div class="col-6 text-left">
-                                    True
+                                <div id="direct-seed" class="col-6 text-left">
+
                                 </div>
                             </div>
                             <div class="row">
@@ -189,16 +183,16 @@
                                     Cuttings:
                                 </div>
                                 <div id="cuttings" class="col-6 text-left">
-                                    True
+
                                 </div>
                             </div>
                             <br>
-                            <a href="https://www.regenerative.com/magazine/five-ways-propagating-plants" class="btn btn-primary">Learn
+                            <a href="https://www.regenerative.com/magazine/five-ways-propagating-plants" target="_blank" class="btn btn-primary">Learn
                                 More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-12">
+                <div class="col-lg-4 col-md-12 col-xs-12">
                     <div class="card">
                         <div class="card-header">
                             Soil pH Range
@@ -209,39 +203,38 @@
                                     Minimum:
                                 </div>
                                 <div id="pH-min" class="col-6 text-left">
-                                    5.5
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-6 text-right">
-                                    Maxmimum:
+                                    Maximum:
                                 </div>
-                                <div id="ph-max" class="col-6 text-left">
-                                    7.0
+                                <div id="pH-max" class="col-6 text-left">
+
                                 </div>
                             </div>
                             <br>
-                            <a href="https://www.cropnutrition.com/efu-soil-ph" class="btn btn-primary">Learn
-                                More</a>
+                            <div class="row justify-content-center">
+                                <a href="https://www.cropnutrition.com/efu-soil-ph" target="_blank" class="btn btn-primary">Learn More about soil pH</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-12">
+                <div class="col-lg-4 col-md-12 col-xs-12">
                     <div class="card">
                         <div class="card-header">
-                            First Harvest
+                            Days To Harvest
                         </div>
                         <div class="card-body">
                             <div class="row">
-                                <div id="days-to-harvest" class="col-6 text-right">
-                                    Days:
-                                </div>
-                                <div id="days-to-harvest" class="col-6 text-left">
-                                    55
+                                <div id="days-to-harvest" class="col-12 text-center">
+
                                 </div>
                             </div>
                             <br>
-                            <a href="https://www.vitegreenhouses.com/HarvestDateCalculator.asp" class="btn btn-primary">Harvest Date Calculator</a>
+                            <div class="row justify-content-center">
+                                <a href="https://www.vitegreenhouses.com/HarvestDateCalculator.asp" target="_blank" class="btn btn-primary">Harvest Date Calculator</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,17 +246,16 @@
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/sketch.js"></script>
+    <!-- <script type="text/javascript" src="assets/javascript/sketch.js"></script> -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/autocomplete.js"></script>
 
     <!--autocomplete -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
-</html>\
+</html>

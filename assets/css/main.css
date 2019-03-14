@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-
-=======
-body {}
->>>>>>> ccee725d9d3194c0144849dc99b1067f63bd8580
-
-#days-to-harvest{
+#days-to-harvest {
     font-size: 60px;
     font-weight: bold;
 }
@@ -58,6 +52,7 @@ input:-ms-input-placeholder {
 h1 {
     text-align: center;
     color: white;
+    font-size: 75px !important;
 }
 
 .card-header {
@@ -97,6 +92,9 @@ form {
     background: #388A8E;
     color: white;
 }
+
+
+/* autocomplete styling */
 
 .ui-autocomplete {
     position: absolute;
@@ -159,42 +157,46 @@ form {
     margin-left: 45%;
 }
 
+
+/*animation */
+
 .fade {
+    zoom: 140%;
     opacity: 1;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 .display-4 {
     opacity: 0;
     animation-name: fadeInOpacity;
-    animation-delay: 2s;
+    animation-delay: .5s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: .75s;
     animation-fill-mode: forwards;
 }
 
 #btn {
     opacity: 0;
     animation-name: fadeInOpacity;
-    animation-delay: 4s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 .input-group {
     opacity: 0;
     animation-name: fadeInOpacity;
-    animation-delay: 4s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
@@ -207,27 +209,38 @@ form {
     }
 }
 
+#location-button {
+    height: 40px;
+    border-width: 1px;
+    background: #388A8E;
+    color: white;
+    font-weight: normal !important;
+    border-radius: 5px;
+    border-color: white !important;
+    border-style: solid !important;
+}
+
+.location_text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0x;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Roboto', arial, sans-serif;
+}
+
 .google-button {
     height: 40px;
     border-width: 0;
-    background: white;
-    color: #737373;
+    background: #388A8E;
+    color: white;
     border-radius: 5px;
-    white-space: nowrap;
-    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
+    border-color: white;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 1);
     transition-property: background-color, box-shadow;
     transition-duration: 150ms;
     transition-timing-function: ease-in-out;
     padding: 0;
-}
-
-.google-button__icon {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0;
-    width: 18px;
-    height: 18px;
-    box-sizing: border-box;
 }
 
 .google-button__icon--plus {
