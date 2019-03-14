@@ -1,98 +1,79 @@
-<<<<<<< HEAD
-
-=======
-body {}
->>>>>>> ccee725d9d3194c0144849dc99b1067f63bd8580
-
+#days-to-harvest {
+    font-size: 60px;
+    font-weight: bold;
+}
 .card-header {
     font-size: 20px;
 }
-
 .temp-row {
     font-size: 50px;
 }
-
 .jumbotron {
     background-color: #388A8E;
     text-align: center;
 }
-
 .display-4 {
     font-size: 30px;
 }
-
 input::-webkit-input-placeholder {
     color: white !important;
 }
-
 input:-moz-placeholder {
     /* Firefox 18- */
     color: white !important;
 }
-
 input::-moz-placeholder {
     /* Firefox 19+ */
     color: white !important;
 }
-
 input:-ms-input-placeholder {
     color: white !important;
 }
-
 .fa-search {
     color: white;
 }
-
 #fa-search-box {
     margin-top: 40px;
     border: white 1px solid;
     height: 38px;
     width: auto;
 }
-
 h1 {
     text-align: center;
     color: white;
 }
-
 .card-header {
     background: #388A8E;
     color: white;
 }
-
 .container-full-bg {
     background: #388A8E;
     height: 100vh;
 }
-
 h2 {
     color: white;
 }
-
 form {
     width: 40%;
     margin-right: 30%;
     margin-left: 30%;
 }
-
 .col {
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
 }
-
 .col-6 {
     padding: 20px;
     text-align: center;
 }
-
 #plants {
     margin-top: 40px;
     border: white solid 1px;
     background: #388A8E;
     color: white;
 }
-
+/* autocomplete styling */
 .ui-autocomplete {
     position: absolute;
     top: 100%;
@@ -123,7 +104,6 @@ form {
     *border-right-width: 2px;
     *border-bottom-width: 2px;
 }
-
 .ui-autocomplete .ui-menu-item>a.ui-corner-all {
     display: block;
     padding: 3px 15px;
@@ -133,7 +113,6 @@ form {
     color: #555555;
     white-space: nowrap;
 }
-
 .ui-autocomplete .ui-menu-item>a.ui-corner-all.ui-state-hover,
 .ui-autocomplete .ui-menu-item>a.ui-corner-all.ui-state-active {
     color: #ffffff;
@@ -144,55 +123,49 @@ form {
     -moz-border-radius: 0px;
     background-image: none;
 }
-
 #container {
     background: white;
 }
-
 .g-signin2 {
     margin-right: 30%;
     margin-left: 45%;
 }
-
+/*animation */
 .fade {
     opacity: 1;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
-
 .display-4 {
     opacity: 0;
     animation-name: fadeInOpacity;
-    animation-delay: 2s;
+    animation-delay: .5s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: .75s;
     animation-fill-mode: forwards;
 }
-
 #btn {
     opacity: 0;
     animation-name: fadeInOpacity;
-    animation-delay: 4s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
-
 .input-group {
     opacity: 0;
     animation-name: fadeInOpacity;
-    animation-delay: 4s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
-
 @keyframes fadeInOpacity {
     0% {
         opacity: 0;
@@ -200,4 +173,48 @@ form {
     100% {
         opacity: 1;
     }
+}
+#location-button {
+    height: 40px;
+    border-width: 1px;
+    background: #388A8E;
+    color: white;
+    font-weight: normal !important;
+    border-radius: 5px;
+    border-color: white !important;
+    border-style: solid !important;
+}
+
+.location_text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0x;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Roboto', arial, sans-serif;
+}
+
+.google-button {
+    height: 40px;
+    border-width: 0;
+    background: #388A8E;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 1);
+    transition-property: background-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    padding: 0;
+}
+.google-button__icon--plus {
+    width: 30px;
+}
+.google-button__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', arial, sans-serif;
 }
